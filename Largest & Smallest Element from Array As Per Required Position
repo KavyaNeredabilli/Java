@@ -1,0 +1,35 @@
+import java.util.Scanner;
+import java.util.Arrays;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner ip = new Scanner(System.in);
+
+    
+        int size = ip.nextInt();
+        long[] arr = new long[size];
+
+        
+        for (int i = 0; i < size; i++) {
+            arr[i] = ip.nextLong();
+        }
+
+        
+        // Step 1: Sort the array
+        Arrays.sort(arr); 
+        System.out.println("Sorted array: " + Arrays.toString(arr));
+        
+        int k = ip.nextInt();
+
+        if (k <= 0 || k > size) {
+            System.out.println("Invalid value of k. It should be between 1 and " + size);
+            return;
+        }
+
+        
+
+        
+        System.out.println("Kth Largest Element: " + arr[size - k]);
+        System.out.println("Kth Smallest Element: " + arr[k - 1]);
+    }
+}
